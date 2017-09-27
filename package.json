@@ -1,0 +1,55 @@
+{
+  "name": "schedule-cache",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "lint": "tslint --project .",
+    "pretest": "npm run tsc",
+    "test-spec": "mocha",
+    "test-cov": "nyc npm run test-spec && nyc report",
+    "test": "npm run test-cov",
+    "prepublish": "npm run lint && npm run tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arylo/schedule-cache.git"
+  },
+  "keywords": [
+    "cache",
+    "ram",
+    "storage",
+    "schedule",
+    "cron",
+    "memory"
+  ],
+  "author": "AryloYeung <arylo.open@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Arylo/schedule-cache/issues"
+  },
+  "homepage": "https://github.com/Arylo/schedule-cache#readme",
+  "dependencies": {
+    "node-schedule": "~1.2.5"
+  },
+  "devDependencies": {
+    "@types/node-schedule": "~1.2.0",
+    "mocha": "~3.5.3",
+    "mochawesome": "~2.3.1",
+    "nyc": "~11.2.1",
+    "should": "~13.1.0",
+    "source-map-support": "~0.4.18",
+    "tslint": "~5.7.0",
+    "typescript": "~2.5.3"
+  },
+  "nyc": {
+    "report-dir": "./coverage",
+    "reporter": [
+      "clover",
+      "cobertura",
+      "lcov"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+--require should
+--require source-map-support/register
+--reporter mochawesome --reporter-options reportDir=./coverage/mochawesome
+--recursive
+-t 5000
+./test/**/*.spec.js
